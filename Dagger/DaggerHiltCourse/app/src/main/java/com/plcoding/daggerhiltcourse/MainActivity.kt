@@ -12,12 +12,10 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val test = Test("Philip")
         setContent {
             DaggerHiltCourseTheme {
+                val viewModel = hiltViewModel<MyViewModel>()
             }
         }
     }
 }
-
-class Test(val name: String)
